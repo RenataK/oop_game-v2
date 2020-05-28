@@ -6,21 +6,30 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = this.createPhrases();
-        this.activePhrases = null;
+        this.activePhrase = null;
     }
 
-    createPhrases() {
-    const phrases = [new Phrase('We were on a break'),
-        new Phrase('You make me smile'),
-        new Phrase('How you doin'),
+    /**
+* Creates phrases for use in game
+* @return {array} An array of phrases that could be used in the game
+*/
+createPhrases() {
+    const randomPhrases = [
+        new Phrase('We were on a break'),
         new Phrase('You are my sunshine'),
-        new Phrase('Pineapple apple pen')
+        new Phrase('How you doin'),
+        new Phrase('rock paper scissors'),
+        new Phrase('pinapple apple pen')
     ];
-        return phrases;
-    }
+    return randomPhrases;
+};
 
-    getRandomPhrase() {
-       const getPhrase =  Math.floor(Math.random() * this.phrases.length);
-        return getPhrase;
-    }
+/**
+* Selects random phrase from phrases property
+* @return {Object} Phrase object chosen to be used
+*/
+getRandomPhrase() {
+    const getPhrase = Math.floor(Math.random() * (this.phrases.length) );
+    return this.phrases[getPhrase];
+};
 }
