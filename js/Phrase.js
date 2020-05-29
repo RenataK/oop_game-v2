@@ -12,13 +12,13 @@ class Phrase {
 */
 addPhraseToDisplay() {
     const ul = document.querySelector('#phrase ul');
-    let li = document.createElement('LI');
-    ul.appendChild(li);
+    let splitPhrase = this.phrase.split('');
+
 
     for (let i=0; i<this.phrase.length; i++) {
-        
-        let splitPhrase = this.phrase.split('');
+        let li = document.createElement('LI');
         li.innerHTML = splitPhrase[i];
+        ul.appendChild(li);
 
         if (this.phrase[i] == ' ') {
             li.classList = 'space';
@@ -28,4 +28,5 @@ addPhraseToDisplay() {
        }
    }
 }
+
 
