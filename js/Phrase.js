@@ -15,14 +15,14 @@ addPhraseToDisplay() {
     let li = document.createElement('LI');
     ul.appendChild(li);
 
-    for (let i=0; i<ul.length; i++) {
+    for (let i=0; i<this.phrase.length; i++) {
         
-        let letter = this.phrase.split('');
-        li.innerHTML = letter;
+        let splitPhrase = this.phrase.split('');
+        li.innerHTML = splitPhrase;
 
         if (this.phrase == ' ') {
             li.classList = 'space';
-        } else if (this.phrase == letter) {
+        } else if (this.phrase == splitPhrase) {
             li.classList = 'hide letter';
         }
        }
