@@ -18,11 +18,11 @@ addPhraseToDisplay() {
     for (let i=0; i<this.phrase.length; i++) {
         
         let splitPhrase = this.phrase.split('');
-        li.innerHTML = splitPhrase;
+        li.innerHTML = splitPhrase[i];
 
-        if (this.phrase == ' ') {
+        if (this.phrase[i] == ' ') {
             li.classList = 'space';
-        } else if (this.phrase == splitPhrase) {
+        } else if (this.phrase[i] == splitPhrase) {
             li.classList = 'hide letter';
         }
        }
