@@ -2,7 +2,10 @@
  * Project  - OOP Game App
  * app.js */
 
-
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+let game;
+const button = document.getElementById('btn__reset');
+button.addEventListener('click', () => {
+    game = new Game(game);
+    game.startGame();
+});
 

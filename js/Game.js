@@ -32,4 +32,29 @@ getRandomPhrase() {
     const getPhrase = Math.floor(Math.random() * (this.phrases.length) );
     return this.phrases[getPhrase];
 };
+
+/**
+* Begins game by selecting a random phrase and displaying it to user
+*/
+startGame() {
+    const overlay = document.getElementById('overlay').style.display = 'none';
+    this.activePhrase = this.getRandomPhrase();
+    this.activePhrase.addPhraseToDisplay();
+}
+
+/**
+* Checks for winning move
+* @return {boolean} True if game has been won, false if game wasn't
+won
+*/
+checkForWin() {
+    const li = document.querySelector('#phrase li');
+
+        if (li.classList == 'show letter' && li.classList !== 'hide letter') {
+            return true;
+        } else {
+            return false;
+        }
+};
+
 }
