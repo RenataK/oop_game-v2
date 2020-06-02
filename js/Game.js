@@ -57,4 +57,8 @@ checkForWin() {
         }
 };
 
+//Console Tests:
+//Test code for checkForWin: game.checkForWin()
+//Test code for showMatchedLetter: game.activePhrase.showMatchedLetter()
+
 }
