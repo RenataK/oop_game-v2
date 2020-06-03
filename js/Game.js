@@ -48,15 +48,13 @@ startGame() {
 won
 */
 checkForWin() {
-    const li = document.querySelectorAll('#phrase li');
-    for (let i=0; i<li.length; i++) {
-        if (li.classList[i] !== 'hide letter') {
-            return true;
-        } else {
+    const li = document.querySelectorALL('#phrase li').getElementsByClassName('hide letter');
+    
+    if (li.length < 0) {
             return false;
+        } else {
+            return true;
         }
-    }
-        
 };
 
 //Console Tests:
@@ -64,3 +62,4 @@ checkForWin() {
 //Test code for showMatchedLetter: game.activePhrase.showMatchedLetter()
 
 }
+
