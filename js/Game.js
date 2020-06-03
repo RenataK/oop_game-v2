@@ -48,13 +48,15 @@ startGame() {
 won
 */
 checkForWin() {
-    const li = document.querySelector('#phrase li');
-
-        if (li.classList == 'show letter' && li.classList !== 'hide letter') {
+    const li = document.querySelectorAll('#phrase li');
+    for (let i=0; i<li.length; i++) {
+        if (li.classList[i] !== 'hide letter') {
             return true;
         } else {
             return false;
         }
+    }
+        
 };
 
 //Console Tests:
