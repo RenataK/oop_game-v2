@@ -49,10 +49,8 @@ won
 */
 checkForWin() {
     const li = document.querySelectorAll('#phrase li');
-    li.classList.contains('hide letter');
-  
     
-    if (li.length < 0) {
+      if (li.length < 0) {
             return false;
         } else {
             return true;
