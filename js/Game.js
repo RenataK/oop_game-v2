@@ -54,7 +54,7 @@ checkForWin() {
     
     if (li.length < 0) {
             return false;
-        } else if (li.length == 0 || li.length > 0) {
+        } else {
             return true;
         }
 };
@@ -65,3 +65,9 @@ checkForWin() {
 
 }
 
+//Select all li elements with a class of hide letter
+//check length of return value
+
+/**
+ * if (document.querySelector(".box").classList.contains("focus"))
+ */
