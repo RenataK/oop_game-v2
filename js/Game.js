@@ -64,10 +64,3 @@ checkForWin() {
 //Test code for showMatchedLetter: game.activePhrase.showMatchedLetter()
 
 }
-
-//Select all li elements with a class of hide letter
-//check length of return value
-
-/**
- * if (document.querySelector(".box").classList.contains("focus"))
- */
