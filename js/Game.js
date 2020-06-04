@@ -48,11 +48,13 @@ startGame() {
 won
 */
 checkForWin() {
-    const li = document.querySelectorALL('#phrase li').getElementsByClassName('hide letter');
+    const li = document.querySelectorAll('#phrase li');
+    li.classList.contains('hide letter');
+  
     
     if (li.length < 0) {
             return false;
-        } else {
+        } else if (li.length == 0 || li.length > 0) {
             return true;
         }
 };
