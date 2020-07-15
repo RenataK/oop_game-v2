@@ -70,5 +70,5 @@ removeLife() {
      this.gameOver();
     }
 };
-
+//test code for removeLife() method: game.removeLife()
 }
