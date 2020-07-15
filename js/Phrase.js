@@ -44,11 +44,11 @@ checkLetter(letter) {
 * @param (string) letter - Letter to display
 */
 showMatchedLetter(letter) {
-    const x = document.querySelectorAll('.letter');
-    for (let i=0; i<x.length; i++) {
+    const allLetters = document.querySelectorAll('.letter');
+    for (let i=0; i<allLetters.length; i++) {
 
-        if (x[i].innerHTML == letter) {
-            x[i].classList.replace('hide', 'show');
+        if (allLetters[i].innerHTML == letter) {
+            allLetters[i].classList.replace('hide', 'show');
         } 
     }
 };

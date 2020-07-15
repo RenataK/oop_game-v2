@@ -48,26 +48,28 @@ startGame() {
 won
 */
 checkForWin() {
-    const li = document.querySelectorAll('#phrase li');
-    li.classList.contains('hide letter');
-  
-    
-    if (li.length < 0) {
-            return false;
-        } else {
+    const letters = document.querySelectorAll('.letter').length;
+    const shown = document.querySelectorAll('.show').length;
+        if (letters == shown) {
             return true;
+        } else {
+            return false;
         }
 };
 
-//Console Tests:
-//Test code for checkForWin: game.checkForWin()
-//Test code for showMatchedLetter: game.activePhrase.showMatchedLetter()
+/**
+* Increases the value of the missed property
+* Removes a life from the scoreboard
+* Checks if player has remaining lives and ends game if player is out
+*/
+removeLife() {
+    const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
+    liveHeart.removeAttribute('src', 'images/liveHeart.png');
+    this.missed +1;
+    if (this.missed == 5) {
+     this.gameOver();
+    }
+};
 
 }
 
-//Select all li elements with a class of hide letter
-//check length of return value
-
-/**
- * if (document.querySelector(".box").classList.contains("focus"))
- */
