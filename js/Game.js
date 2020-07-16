@@ -64,7 +64,6 @@ checkForWin() {
 */
 removeLife() {
     const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
-   // for (let i = 0; i < liveHeart.length; i++) {
         this.missed ++;
         if (this.missed === 1) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
@@ -76,11 +75,8 @@ removeLife() {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed == 5) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
-        }else if (this.missed === 6) {
-             this.gameOver();
-        }
-    //}
+            this.gameOver();
+        } 
 };
-//test code for removeLife() method: game.removeLife()
 }
 
