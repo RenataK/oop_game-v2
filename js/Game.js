@@ -64,11 +64,21 @@ checkForWin() {
 */
 removeLife() {
     const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
-    liveHeart.removeAttribute('src', 'images/liveHeart.png');
-    this.missed +1;
-    if (this.missed == 5) {
-     this.gameOver();
+    for (let i = 0; i < liveHeart.length; i++) {
+        this.missed ++;
+        if (this.missed == 1) {
+            liveHeart[i].setAttribute('src', 'images/lostHeart.png');
+        } else if (this.missed == 2) {
+            liveHeart[i].setAttribute('src', 'images/lostHeart.png');
+        } else if (this.missed == 3) {
+            liveHeart[i].setAttribute('src', 'images/lostHeart.png');
+        } else if (this.missed == 4) {
+            liveHeart[i].setAttribute('src', 'images/lostHeart.png');
+        } else if (this.missed == 5) {
+             this.gameOver();
+        }
     }
 };
 //test code for removeLife() method: game.removeLife()
 }
+
