@@ -64,17 +64,22 @@ checkForWin() {
 */
 removeLife() {
     const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
-        this.missed ++;
+        this.missed = 1;
         if (this.missed === 1) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
+            this.missed +1;
         } else if (this.missed === 2) {
             liveHeart[1].setAttribute('src', 'images/lostHeart.png');
+            this.missed +1;
         } else if (this.missed === 3) {
             liveHeart[2].setAttribute('src', 'images/lostHeart.png');
+            this.missed +1;
         } else if (this.missed === 4) {
             liveHeart[3].setAttribute('src', 'images/lostHeart.png');
+            this.missed +1;
         } else if (this.missed == 5) {
             liveHeart[4].setAttribute('src', 'images/lostHeart.png');
+            this.missed ++;
             this.gameOver();
         } 
 };
