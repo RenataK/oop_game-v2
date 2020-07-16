@@ -68,13 +68,13 @@ removeLife() {
         if (this.missed === 1) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed === 2) {
-            liveHeart[0].setAttribute('src', 'images/lostHeart.png');
+            liveHeart[1].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed === 3) {
-            liveHeart[0].setAttribute('src', 'images/lostHeart.png');
+            liveHeart[2].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed === 4) {
-            liveHeart[0].setAttribute('src', 'images/lostHeart.png');
+            liveHeart[3].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed == 5) {
-            liveHeart[0].setAttribute('src', 'images/lostHeart.png');
+            liveHeart[4].setAttribute('src', 'images/lostHeart.png');
             this.gameOver();
         } 
 };
