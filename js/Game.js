@@ -90,11 +90,11 @@ gameOver(gameWon) {
     const win = document.querySelectorAll('.win');
     const lose = document.querySelectorAll('.lose');
 
-    if (this.gameWon == false) {
+    if (this.missed == 5) {
         lose.style.display = 'block';
         //gameOverMessage.textContent = 'You Lost';
         // overlay.classList.replace('startCSS', 'lose');
-    } else if (this.gameWon == true) {
+    } else if (this.missed !== 5) {
         win.style.display = 'block';
         //gameOverMessage.textContent = 'You won!';
         // overlay.classList.replace('startCSS', 'win');
@@ -105,3 +105,9 @@ gameOver(gameWon) {
 
 }
 
+/**
+ * `gameOver()`: This method displays the original start screen overlay, and
+depending on the outcome of the game, updates the overlay `h1` element with a
+friendly win or loss message, and replaces the overlay’s `start` CSS class with
+either the `win` or `lose` CSS class.
+ */
