@@ -78,5 +78,30 @@ removeLife() {
             this.gameOver();
         } 
 };
+/**
+* Displays game over message
+* @param {boolean} gameWon - Whether or not the user won the game
+*/
+gameOver(gameWon) {
+    //const overlay = document.getElementById('overlay');
+    //const startHTML = document.getElementsByClassName('start');
+    const gameOverMessage = document.getElementById('game-over-message');
+    const startCSS = document.querySelectorAll('.start');
+    const win = document.querySelectorAll('.win');
+    const lose = document.querySelectorAll('.lose');
+
+    if (this.gameWon == false) {
+        lose.style.display = 'block';
+        //gameOverMessage.textContent = 'You Lost';
+        // overlay.classList.replace('startCSS', 'lose');
+    } else if (this.gameWon == true) {
+        win.style.display = 'block';
+        //gameOverMessage.textContent = 'You won!';
+        // overlay.classList.replace('startCSS', 'win');
+        }
+};
+
+//code to test gameOver() method: game.gameOver(true)
+
 }
 
