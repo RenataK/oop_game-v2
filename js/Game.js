@@ -75,7 +75,7 @@ removeLife() {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed == 5) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
-            this.gameOver();
+            this.gameOver('won');
         } 
 };
 /**
@@ -83,22 +83,19 @@ removeLife() {
 * @param {boolean} gameWon - Whether or not the user won the game
 */
 gameOver(gameWon) {
-    //const overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('overlay');
     //const startHTML = document.getElementsByClassName('start');
     const gameOverMessage = document.getElementById('game-over-message');
     const startCSS = document.querySelectorAll('.start');
     const win = document.querySelectorAll('.win');
     const lose = document.querySelectorAll('.lose');
 
-    this.gameOver(won);
     if (this.gameWon == 'won') {
         win.style.display = 'block';
-        //gameOverMessage.textContent = 'You won!';
-        // overlay.classList.replace('startCSS', 'win');
     } else if (this.gameWon !== 'won') {
         lose.style.display = 'block';
-        //gameOverMessage.textContent = 'You Lost';
-        // overlay.classList.replace('startCSS', 'lose');
+        
+        console.log(gameOver);
     }
 };
 
