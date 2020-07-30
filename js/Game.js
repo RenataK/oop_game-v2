@@ -75,7 +75,7 @@ removeLife() {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
         } else if (this.missed == 5) {
             liveHeart[0].setAttribute('src', 'images/lostHeart.png');
-            this.gameOver('won');
+            this.gameOver(false);
         } 
 };
 /**
@@ -90,12 +90,13 @@ gameOver(gameWon) {
     const win = document.querySelectorAll('.win');
     const lose = document.querySelectorAll('.lose');
 
-    if (this.gameWon == 'won') {
-        win.style.display = 'block';
-    } else if (this.gameWon !== 'won') {
-        lose.style.display = 'block';
-        
-        console.log(gameOver);
+    if (gameWon == true) {
+        overlay.classList.replace('startCSS', 'win');
+        //win.style.display = 'block';
+    } 
+    else if (gameWon == false) {
+        overlay.classList.replace('startCSS', 'lose');
+       //lose.style.display = 'block';   
     }
 };
 
@@ -103,3 +104,53 @@ gameOver(gameWon) {
 
 }
 
+//if
+        //gameOverMessage.textContent = 'You won!';
+        // overlay.classList.replace('startCSS', 'win');
+        //if else
+        //gameOverMessage.textContent = 'You Lost';
+        // overlay.classList.replace('startCSS', 'lose');
+
+/**
+ * `gameOver()`: This method displays the original start screen overlay, and
+depending on the outcome of the game, updates the overlay `h1` element with a
+friendly win or loss message, and replaces the overlay’s `start` CSS class with
+either the `win` or `lose` CSS class.
+ */
+
+ /**
+  * As for the gameOver method, your method includes a "gameWon" parameter 
+  * but you don't actually use that param anywhere in your code right now. 
+  * Instead of trying to figure out if the user has won the game or not with something 
+  * like the conditionals you have on lines 93 and 97, 
+  * which your app already does in other places, 
+  * you would instead want to use the "gameWon" parameter to determine this. 
+  * So for example, when the user has won the game you might call the gameOver method 
+  * and pass an argument like "won". 
+  * Then in your method, you would have a conditional that checks to see if
+  *  "gameWon" equals "won" and then if so, display the win message. 
+  * You would apply a similar logic to when the user has lost the game. 
+  * So in other words, the parameter should determine what message appears on the overlay.
+  */
+
+/**
+ * "gameWon" = parameter (to determine if user won or not)
+ * when user wins, call gameOver() and pass argument "won"
+ * check if 'gameWon' = 'won'
+ * if so, display message. 
+ */
+
+ /**
+  * Parameters are what you use when you create a function or method. 
+  * Arguments are what you use when you call a function or method.
+So when you call the gameOver method in the removeLife or handleInteraction methods, 
+you would pass an argument that represents whether or not the player won the game or not. 
+Then in the gameOver method, you would access the value of that argument that was passed 
+when the method was called via the "gameWon" parameter.
+
+To put it another way, the value of "gameWon" in the gameOver method will be whatever 
+was passed as an argument when the method was called. 
+To see this in action, try putting console.log(gameWon) just inside the gameOver method 
+and then see what logs out when you call the method with different arguments. 
+Once you get a feel for how this works you can work on structuring the conditional.
+  */
