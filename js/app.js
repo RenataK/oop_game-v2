@@ -14,7 +14,7 @@ const qwerty = document.getElementById('qwerty');
 
 qwerty.addEventListener('click', (e) => {
     if (e.target.className == 'key') {
-    game.handleInteraction(button);
-    }
+    game.handleInteraction(e.target);
+    } 
 });
 
