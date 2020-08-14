@@ -91,16 +91,24 @@ gameOver(gameWon) {
     const lose = document.querySelectorAll('.lose');
 
     if (gameWon == true) {
-        overlay.style.display = 'none'; 
-        win.style.display = 'block';
+        overlay.className = 'win';
+        overlay.style.display = 'block';
+        gameOverMessage.textContent = 'You Won! 🎊'
     } 
     else if (gameWon == false) {
-        overlay.style.display = 'none'; 
-        lose.style.display = 'block';
+        overlay.className = 'lose';
+        overlay.style.display = 'block';
+        gameOverMessage.textContent = 'You Lost! 😕'
     }
 };
 
-//code to test gameOver() method: game.gameOver(true)
+/**
+* Handles onscreen keyboard button clicks
+* @param (HTMLButtonElement) button - The clicked button element
+*/
+handleInteraction(button) {
+    console.log(button);
+    };
 
 }
 
