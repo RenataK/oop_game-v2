@@ -107,8 +107,24 @@ gameOver(gameWon) {
 * @param (HTMLButtonElement) button - The clicked button element
 */
 handleInteraction(button) {
+    const qwerty = document.getElementById('qwerty');
+    const letters = document.querySelectorAll('.letter');
+    const chosen = document.querySelectorAll('.chosen');
+    const wrong = document.querySelectorAll('.wrong');
+
+
+
     console.log(button);
     };
 
 }
 
+/**
+ * ● Disable the selected letter’s onscreen keyboard button.
+● If the phrase does not include the guessed letter, add the `wrong` CSS class to the
+selected letter's keyboard button and call the `removeLife()` method.
+● If the phrase includes the guessed letter, add the `chosen` CSS class to the selected
+letter's keyboard button, call the `showMatchedLetter()` method on the phrase, and then
+call the `checkForWin()` method. If the player has won the game, also call the
+`gameOver()` method.
+ */
