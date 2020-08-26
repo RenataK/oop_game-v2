@@ -107,27 +107,26 @@ gameOver(gameWon) {
 * @param (HTMLButtonElement) button - The clicked button element
 */
 handleInteraction(button) {
-    const phrase = document.getElementById('phrase');
-    const qwerty = document.getElementById('qwerty');
-    const letters = document.querySelectorAll('.letter');
+    //const phrase = document.getElementById('phrase');
+    //const qwerty = document.getElementById('qwerty');
+    //const letters = document.querySelectorAll('.letter');
     const chosen = document.querySelectorAll('.chosen');
     const wrong = document.querySelectorAll('.wrong');
-    button.disabled = 'true';
 
-    //if ()  {
+
+    if (this.checkLetter)  {
+        button.disabled = 'true';
         button.classList.add('wrong');
         this.removeLife();
-    //} else {
+    } else {
         button.classList.add('chosen');
         //this.showMatchedLetter();
         this.checkForWin();
         this.gameOver();
-    //}
+    }
 
     console.log(button);
     };
 
 }
-
-
 
