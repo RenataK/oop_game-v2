@@ -118,7 +118,6 @@ handleInteraction(button) {
         button.classList.add('wrong');
         this.removeLife();
     //} else {
-    //if (this.activePhrase == 'letters') {
         button.classList.add('chosen');
         //this.showMatchedLetter();
         this.checkForWin();
