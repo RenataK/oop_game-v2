@@ -13,7 +13,7 @@ button.addEventListener('click', () => {
 const qwerty = document.getElementById('qwerty');
 
 qwerty.addEventListener('click', (e) => {
-    if (e.target.className == 'key') {
+    if (e.target.tagName == 'BUTTON') {
     game.handleInteraction(e.target);
     } 
 });
