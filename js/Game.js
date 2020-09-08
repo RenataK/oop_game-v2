@@ -85,19 +85,36 @@ removeLife() {
 gameOver(gameWon) {
     const overlay = document.getElementById('overlay');
     const gameOverMessage = document.getElementById('game-over-message');
-    const startCSS = document.querySelectorAll('.start');
-    const win = document.querySelectorAll('.win');
-    const lose = document.querySelectorAll('.lose');
+    const keys = document.getElementsByClassName('key');
+    const ul = document.querySelector('#phrase ul');
+    const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
+    
 
     if (gameWon == true) {
         overlay.className = 'win';
         overlay.style.display = 'block';
-        gameOverMessage.textContent = 'You Won! 🎊'
+        gameOverMessage.textContent = 'You Won! 🎊';
+        
+        ul.innerHTML = '';
+
+        for (let i=0; i<keys.length; i++) {
+            keys[i].disabled = false;
+            keys[i].classList = 'key';
+        }
+        
     } 
     else if (gameWon == false) {
         overlay.className = 'lose';
         overlay.style.display = 'block';
-        gameOverMessage.textContent = 'You Lost! 😕'
+        gameOverMessage.textContent = 'You Lost! 😕';
+        
+        ul.innerHTML = '';
+
+        for (let i=0; i<keys.length; i++) {
+            keys[i].disabled = false;
+            keys[i].classList = 'key';
+        }
+
     }
 };
 
@@ -117,14 +134,15 @@ handleInteraction(button) {
         button.classList.add('chosen');
         this.activePhrase.showMatchedLetter(button.innerHTML) == 'letter';
      } 
-
-     if (this.checkForWin(button.innerHTML) == true) {
+    if (this.checkForWin(button.innerHTML) === true) {
         return this.gameOver(true);
      }
 
-    console.log(button);
     };
 
+
 }
+
+
 
 
