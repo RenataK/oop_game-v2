@@ -1,7 +1,9 @@
 /* Treehouse FSJS Techdegree
- * Project  - OOP Game App
+ * Project 4- OOP Game App
  * Phrase.js */
 
+ //Created Phrase class and constructor.
+ //Added the phrase property.
 class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
@@ -13,6 +15,7 @@ class Phrase {
 addPhraseToDisplay() {
     const ul = document.querySelector('#phrase ul');
     let splitPhrase = this.phrase.split('');
+    ul.innerHTML = '';
 
 
     for (let i=0; i<this.phrase.length; i++) {

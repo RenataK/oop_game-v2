@@ -1,7 +1,9 @@
 /* Treehouse FSJS Techdegree
- * Project  - OOP Game App
+ * Project 4- OOP Game App
  * Game.js */
 
+ //Created Game class and constructor to track # of missed guesses, 
+ //phrases that will be displayed, and the active phrase on screen. 
 class Game {
     constructor() {
         this.missed = 0;
@@ -18,14 +20,14 @@ createPhrases() {
         new Phrase('We were on a break'),
         new Phrase('You are my sunshine'),
         new Phrase('How you doin'),
-        new Phrase('rock paper scissors'),
-        new Phrase('pinapple apple pen')
+        new Phrase('Rock paper scissors'),
+        new Phrase('Look what you made me do')
     ];
     return randomPhrases;
 };
 
 /**
-* Selects random phrase from phrases property
+* Selects random phrase from phrases property 
 * @return {Object} Phrase object chosen to be used
 */
 getRandomPhrase() {
@@ -85,36 +87,18 @@ removeLife() {
 gameOver(gameWon) {
     const overlay = document.getElementById('overlay');
     const gameOverMessage = document.getElementById('game-over-message');
-    const keys = document.getElementsByClassName('key');
-    const ul = document.querySelector('#phrase ul');
-    const liveHeart = document.querySelectorAll('img[src="images/liveHeart.png"]');
-    
 
     if (gameWon == true) {
         overlay.className = 'win';
         overlay.style.display = 'block';
         gameOverMessage.textContent = 'You Won! 🎊';
-        
-        ul.innerHTML = '';
-
-        for (let i=0; i<keys.length; i++) {
-            keys[i].disabled = false;
-            keys[i].classList = 'key';
-        }
-        
+        this.gameRestart();
     } 
     else if (gameWon == false) {
         overlay.className = 'lose';
         overlay.style.display = 'block';
         gameOverMessage.textContent = 'You Lost! 😕';
-        
-        ul.innerHTML = '';
-
-        for (let i=0; i<keys.length; i++) {
-            keys[i].disabled = false;
-            keys[i].classList = 'key';
-        }
-
+        this.gameRestart();
     }
 };
 
@@ -137,12 +121,28 @@ handleInteraction(button) {
     if (this.checkForWin(button.innerHTML) === true) {
         return this.gameOver(true);
      }
+};
 
-    };
+/**
+* Resetting the game after player has won or lost
+*enabled onscreen buttons and reset the keys back to the class key.
+*Reset the live heart images.
+* @param (HTMLButtonElement) button - The clicked button element
+*/
+gameRestart() {
+    const keys = document.getElementsByClassName('key');
+    const lostHeart = document.querySelectorAll('img[src="images/lostHeart.png"]');
 
+    for (let i=0; i<keys.length; i++) {
+        keys[i].disabled = false;
+        keys[i].classList = 'key';
+    }
+    for (let i=0; i<lostHeart.length; i++) {
+        lostHeart[i].setAttribute('src', 'images/liveHeart.png');
+    }
+};
 
 }
-
 
 
 
